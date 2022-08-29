@@ -11,6 +11,7 @@ describe StringCalculator do
         end
         it "adds numbers and returns sum total" do
             expect(string_calculator.add("1")).to eq(1)
+            expect(string_calculator.add("1,2")).to eq(3)
         end
     end
 end
