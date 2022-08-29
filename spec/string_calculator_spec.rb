@@ -22,6 +22,8 @@ describe StringCalculator do
          end
          it "supports different delimiters, adds numbers and returns sum total" do
             expect(string_calculator.add("//;\n1;2")).to eq(3)
+            expect(string_calculator.add("//;\n1;2;5")).to eq(8)
+            expect(string_calculator.add("//;\n1;2;5,3")).to eq(11)
          end
     end
 end
