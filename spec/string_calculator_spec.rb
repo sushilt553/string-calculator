@@ -16,5 +16,8 @@ describe StringCalculator do
             expect(string_calculator.add("1,2,3,4")).to eq(10)
             expect(string_calculator.add("1,2,3,4,5")).to eq(15)
         end
+         it "handles new lines '\n', adds numbers and returns sum total" do
+            expect(string_calculator.add("1\n2,3")).to eq(6)
+         end
     end
 end
