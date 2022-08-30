@@ -16,22 +16,22 @@ describe StringCalculator do
             expect(string_calculator.add("1,2,3,4")).to eq(10)
             expect(string_calculator.add("1,2,3,4,5")).to eq(15)
         end
-         it "handles new lines '\n', adds numbers and returns sum total" do
+        it "handles new lines '\n', adds numbers and returns sum total" do
             expect(string_calculator.add("1\n2,3")).to eq(6)
             expect(string_calculator.add("1\n\n2,3\n5")).to eq(11)
-         end
-         it "supports different delimiters, adds numbers and returns sum total" do
+        end
+        it "supports different delimiters, adds numbers and returns sum total" do
             expect(string_calculator.add("//;\n1;2")).to eq(3)
             expect(string_calculator.add("//;\n1;2;5")).to eq(8)
             expect(string_calculator.add("//;\n1;2;5,3")).to eq(11)
             expect(string_calculator.add("//[***]\n1***2***3")).to eq(6)
             expect(string_calculator.add("//[*][%]\n1*2%3”")).to eq(6)
             expect(string_calculator.add("//[**][%%]\n1**2%%3”")).to eq(6)
-         end
-         it "raises an exception for negative numbers in the string" do
+        end
+        it "raises an exception for negative numbers in the string" do
             expect{ string_calculator.add("-1") }.to raise_error('negatives not allowed - -1')
-            expect{string_calculator.add("-1,-2,-3")}.to raise_error('negatives not allowed - -1, -2, -3')
-         end
+            expect{ string_calculator.add("-1,-2,-3") }.to raise_error('negatives not allowed - -1, -2, -3')
+        end
     end
     describe "#getCalledCount" do
         it "returns number of times the #add method is called" do
