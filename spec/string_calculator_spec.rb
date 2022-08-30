@@ -27,6 +27,7 @@ describe StringCalculator do
          end
          it "raises an exception for negative numbers in the string" do
             expect{ string_calculator.add("-1") }.to raise_error('negatives not allowed - -1')
+            expect{string_calculator.add("-1,-2,-3")}.to raise_error('negatives not allowed - -1, -2, -3')
          end
     end
 end
