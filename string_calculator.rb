@@ -1,5 +1,11 @@
 class StringCalculator
+
+    def initialize
+        @count = 0
+    end
+
     def add(numbers)
+        @count += 1
         negatives = []
         nums_arr = numbers.split("")
         sum = 0
@@ -25,5 +31,9 @@ class StringCalculator
         else
             raise "negatives not allowed - #{negatives.join(", ")}"
         end
+    end
+
+    def getCalledCount
+        @count
     end
 end
