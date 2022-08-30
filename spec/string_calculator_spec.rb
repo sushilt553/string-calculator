@@ -30,4 +30,12 @@ describe StringCalculator do
             expect{string_calculator.add("-1,-2,-3")}.to raise_error('negatives not allowed - -1, -2, -3')
          end
     end
+    describe "#getCalledCount" do
+        it "returns number of times the #add method is called" do
+            string_calculator.add('1')
+            string_calculator.add('12')
+            string_calculator.add('123')
+            expect(string_calculator.getCalledCount).to eq(3)
+        end
+    end
 end
