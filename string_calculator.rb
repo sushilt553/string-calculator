@@ -11,9 +11,9 @@ class StringCalculator
         sum = 0
         nums_arr.each_with_index do |num, idx|
             if num == '-'
-                n = nums_arr[idx + 1].to_i
-                if n > 0
-                    negatives << -n
+                next_num = nums_arr[idx + 1].to_i
+                if next_num > 0
+                    negatives << -next_num
                 end
             end
             
